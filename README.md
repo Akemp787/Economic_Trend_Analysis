@@ -35,11 +35,8 @@ This project focuses on analyzing complex, large-scale economic datasets to unco
 
 The economic data for this project will be sourced from:
 
-- **World Bank Data API**: Global economic indicators (GDP, inflation, etc.).
 - **Federal Reserve Economic Data (FRED)**: U.S. economic trends.
-- **Eurostat**: European economic data.
-- **Custom Datasets**: Manually integrated data, including financial data and reports.
-
+- **Yahoo Finance**: U.S. Stock Market trends. 
 ---
 
 ## **Tools & Technologies**

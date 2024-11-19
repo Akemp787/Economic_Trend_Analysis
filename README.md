@@ -1,4 +1,4 @@
-Economic Trend Analysis (2000--2024)
+Economic Trend Analysis (2000-2024)
 ===================================
 
 This project explores key economic indicators from 2000 to 2024, including GDP, Federal Funds Rate, S&P 500 Index, Median CPI, and Unemployment Rate. The goal is to analyze historical trends, build predictive models, and visualize insights through an interactive dashboard.
@@ -52,47 +52,31 @@ Technologies Used
 
 Installation and Setup
 ----------------------
-
 1.  **Clone the repository**:
-
-    bash
-
-    Copy code
-
-    `git clone https://github.com/yourusername/economic-trend-analysis.git`
+```bash
+    git clone https://github.com/yourusername/economic-trend-analysis.git
+```
 
 2.  **Navigate to the project directory**:
-
-    bash
-
-    Copy code
-
-    `cd economic-trend-analysis`
+```bash
+    cd economic-trend-analysis
+```
 
 3.  **Create a virtual environment** (optional but recommended):
-
-    bash
-
-    Copy code
-
-    `python -m venv venv
-    source venv/bin/activate  # On Windows: venv\Scripts\activate`
+```bash
+    python -m venv venv
+    source venv/bin/activate  # On Windows: venv\Scripts\activate
+```
 
 4.  **Install required packages**:
-
-    bash
-
-    Copy code
-
-    `pip install -r requirements.txt`
+```bash
+    pip install -r requirements.txt
+```
 
 5.  **Run Jupyter Notebook**:
-
-    bash
-
-    Copy code
-
-    `jupyter notebook`
+```bash
+    jupyter notebook
+```
 
 Methodology
 -----------
@@ -132,123 +116,87 @@ Data was collected from reliable sources like the Federal Reserve Economic Data 
 -   **ARIMA Model**: Used for long-term GDP forecasting (1 year, 5 years, and 10 years horizons).
 -   **LSTM Neural Network**: Implemented for short-term GDP forecasting using TensorFlow and Keras.
 
-Findings and Insights
+
 ---------------------
 
-### Correlation Analysis
+### Findings and Insights
+--------------------------
+
+#### Correlation Analysis
 
 The correlation heatmap revealed significant relationships between the economic indicators:
 
--   **GDP and Unemployment Rate**: A strong negative correlation (-0.97) indicates that as GDP increases, the Unemployment Rate tends to decrease. This aligns with the economic principle that higher production leads to more job opportunities, reducing unemployment.
--   **GDP and S&P 500 Index**: A strong positive correlation (0.98) suggests that stock market performance is closely tied to the overall economy. As companies generate higher profits in a growing economy, stock prices tend to rise.
--   **Federal Funds Rate and Median CPI**: A moderate positive correlation (0.75) implies that higher interest rates are associated with higher inflation rates, reflecting central bank actions to control inflation.
+- **GDP and Unemployment Rate**: A strong negative correlation (-0.97) indicates that as GDP increases, the Unemployment Rate tends to decrease. This aligns with the economic principle that higher production leads to more job opportunities, reducing unemployment.
+  - **Graph**: [View Correlation Heatmap](#)
 
-### Time-Series Decomposition
+- **GDP and S&P 500 Index**: A strong positive correlation (0.98) suggests that stock market performance is closely tied to the overall economy. As companies generate higher profits in a growing economy, stock prices tend to rise.
+  - **Graph**: [View GDP vs. S&P 500 Index](#)
+
+- **Federal Funds Rate and Median CPI**: A moderate positive correlation (0.75) implies that higher interest rates are associated with higher inflation rates, reflecting central bank actions to control inflation.
+  - **Graph**: [View Federal Funds Rate vs. CPI](#)
+
+#### Time-Series Decomposition
 
 The decomposition of GDP time series into trend, seasonal, and residual components provided deeper insights:
 
--   **Trend Component**: Showed a consistent upward trajectory of GDP over the years, signifying long-term economic growth despite short-term fluctuations.
--   **Seasonal Component**: Revealed minimal seasonal effects, indicating that GDP doesn't have strong seasonal patterns on a quarterly basis.
--   **Residual Component**: Captured irregularities and anomalies, such as the economic downturn during the 2008 financial crisis and the impact of other unforeseen events.
+- **Trend Component**: Showed a consistent upward trajectory of GDP over the years, signifying long-term economic growth despite short-term fluctuations.
+- **Seasonal Component**: Revealed minimal seasonal effects, indicating that GDP doesn't have strong seasonal patterns on a quarterly basis.
+- **Residual Component**: Captured irregularities and anomalies, such as the economic downturn during the 2008 financial crisis and the impact of other unforeseen events.
+  - **Graph**: [View Time-Series Decomposition](#)
 
-### Predictive Modeling and Scenario Analysis
+#### Predictive Modeling and Scenario Analysis
 
-The ensemble model's performance metrics were satisfactory:
+- **Scenario Simulation**: Modeled the effect of a 1% increase in the Federal Funds Rate.
+  - **Findings**:
+    - **GDP Projection**: The model predicted a decrease in GDP growth under the higher interest rate scenario.
+    - **Interpretation**: Higher interest rates can lead to reduced borrowing and spending by businesses and consumers, slowing economic growth.
+  - **Graph**: [View Scenario Projection](#)
 
--   **MAE**: 773.66
--   **MSE**: 739,099.22
--   **RMSE**: 859.71
-
-#### Impact of Federal Funds Rate Increase
-
--   **Scenario Simulation**: Modeled the effect of a 1% increase in the Federal Funds Rate.
--   **Findings**:
-    -   **GDP Projection**: The model predicted a decrease in GDP growth under the higher interest rate scenario.
-    -   **Interpretation**: Higher interest rates can lead to reduced borrowing and spending by businesses and consumers, slowing economic growth.
--   **Visualization**: Plotted the original GDP against the scenario projection, clearly illustrating the potential negative impact on GDP.
-
-### Clustering Results
+#### Clustering Results
 
 Using K-Means clustering, the data was segmented into three clusters:
 
--   **Cluster 0**:
-    -   **Characteristics**: Low GDP and high Unemployment Rate.
-    -   **Periods**: Corresponds to economic recessions, such as the 2008 financial crisis.
--   **Cluster 1**:
-    -   **Characteristics**: Moderate GDP and Unemployment Rate.
-    -   **Periods**: Transitional phases between recession and expansion.
--   **Cluster 2**:
-    -   **Characteristics**: High GDP and low Unemployment Rate.
-    -   **Periods**: Times of strong economic performance and growth.
+- **Cluster 0**:
+  - **Characteristics**: Low GDP and high Unemployment Rate.
+  - **Periods**: Corresponds to economic recessions, such as the 2008 financial crisis.
+- **Cluster 1**:
+  - **Characteristics**: Moderate GDP and Unemployment Rate.
+  - **Periods**: Transitional phases between recession and expansion.
+- **Cluster 2**:
+  - **Characteristics**: High GDP and low Unemployment Rate.
+  - **Periods**: Times of strong economic performance and growth.
+  - **Graph**: [View Clustering Visualization](#)
 
-#### Interpretation
-
--   The clustering analysis highlights how economic indicators group together during different economic cycles.
--   **Policy Implications**: Understanding these clusters can help policymakers tailor strategies for different economic conditions.
-
-### Rolling Correlation Analysis
+#### Rolling Correlation Analysis
 
 Calculated the rolling correlation between GDP and Unemployment Rate over a 12-quarter window:
 
--   **Observations**:
-    -   The negative correlation persisted over time, but the strength varied.
-    -   Periods with stronger negative correlation may indicate more robust economic cycles.
--   **Insight**:
-    -   The varying correlation strength can help identify shifts in the economic relationship between GDP and unemployment, possibly due to structural changes in the economy.
+- **Observations**:
+  - The negative correlation persisted over time, but the strength varied.
+  - Periods with stronger negative correlation may indicate more robust economic cycles.
+- **Insight**:
+  - The varying correlation strength can help identify shifts in the economic relationship between GDP and unemployment, possibly due to structural changes in the economy.
+  - **Graph**: [View Rolling Correlation](#)
 
-### Economic Recovery Periods
+#### GDP Forecasts
 
-Identified specific periods where:
+##### ARIMA Model Projections
 
--   **Unemployment Rate** was below 6%.
--   **GDP** exceeded $15,000 billion.
+- **1-Year Forecast**:
+  - **Projected GDP**: Expected to reach approximately $27,562 billion by Q3 2023.
+- **5-Year Forecast**:
+  - **Projected GDP**: Anticipated to surpass $32,719 billion by Q3 2027.
+- **10-Year Forecast**:
+  - **Projected GDP**: Estimated to exceed $39,166 billion by Q3 2032.
+  - **Graph**: [View ARIMA Forecast](#)
 
-#### Findings
+##### LSTM Model Projections
 
--   These periods were marked by strong economic performance and can be considered recovery or expansion phases.
--   **Visual Analysis**:
-    -   Highlighted these periods on a plot of GDP and Unemployment Rate.
-    -   Showed the alignment between decreasing unemployment and increasing GDP.
-
-### GDP Forecasts
-
-#### ARIMA Model Projections
-
--   **1-Year Forecast**:
-    -   **Projected GDP**: Expected to reach approximately $27,562 billion by Q3 2023.
--   **5-Year Forecast**:
-    -   **Projected GDP**: Anticipated to surpass $32,719 billion by Q3 2027.
--   **10-Year Forecast**:
-    -   **Projected GDP**: Estimated to exceed $39,166 billion by Q3 2032.
-
-#### Interpretation
-
--   The ARIMA model forecasts a steady increase in GDP over the next decade.
--   **Assumptions**: Based on historical trends continuing without major disruptions.
-
-#### LSTM Model Forecasts
-
--   **12-Month Forecast**:
-    -   **Projected GDP**: Predicted to reach approximately $38,785 billion by the end of the forecast period.
--   **Observation**:
-    -   The LSTM model predicts a more optimistic GDP growth compared to the ARIMA model.
--   **Potential Reasons**:
-    -   LSTM models can capture nonlinear patterns and may be more responsive to recent trends.
-
-### Comparative Analysis
-
--   **ARIMA vs. LSTM**:
-    -   **ARIMA** is better suited for linear, stationary data and longer-term forecasts.
-    -   **LSTM** can model complex, nonlinear relationships and may perform better with sufficient data.
--   **Ensemble Model vs. Time-Series Models**:
-    -   The ensemble model provides immediate predictions based on multiple indicators.
-    -   Time-series models focus on historical GDP values to forecast future GDP.
-
-### Overall Insights
-
--   **Economic Indicators Are Interconnected**: The strong correlations confirm the interplay between different facets of the economy.
--   **Predictive Models Are Useful but Limited**: While models can forecast trends, they are limited by the quality and scope of historical data.
--   **Policy Changes Have Significant Impacts**: Simulations show that changes in interest rates can materially affect economic growth.
+- **12-Month Forecast**:
+  - **Projected GDP**: Predicted to reach approximately $38,785 billion by the end of the forecast period.
+- **Observation**:
+  - The LSTM model predicts a more optimistic GDP growth compared to the ARIMA model.
+  - **Graph**: [View LSTM Forecast](#)
 
 Challenges and Solutions
 ------------------------

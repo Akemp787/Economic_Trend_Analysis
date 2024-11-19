@@ -118,7 +118,7 @@ Data was collected from reliable sources like the Federal Reserve Economic Data 
 
 
 
-### Findings and Insights
+Findings and Insights
 --------------------------
 
 #### Correlation Analysis

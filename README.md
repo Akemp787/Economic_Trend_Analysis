@@ -117,7 +117,6 @@ Data was collected from reliable sources like the Federal Reserve Economic Data 
 -   **LSTM Neural Network**: Implemented for short-term GDP forecasting using TensorFlow and Keras.
 
 
----------------------
 
 ### Findings and Insights
 --------------------------
